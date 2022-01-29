@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!--  CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
+    <link rel="stylesheet" href="plugins/owlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="plugins/datetimepicker/datetimepicker.min.css">
+    <link rel="stylesheet" href="plugins/animation/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="images/xIcon.png" type="image/x-icon" />
+    <title> Lavendura </title>
+</head>
+
+<body class="authenticated">
+
+    <!-- Header  -->
+    <div class="header">
+        <div class="headerTop">
+            <div class="container">
+                <div class="flexBox">
+                    <div class="siteIcons">
+                        <div class="region dropDown">
+                            <span class="dropIcon"> <img src="images/flag.png" alt="flag"> </span>
+                            <select default>
+                                <option value="Riyadh"> الرياض </option>
+                                <option value="Mecca"> مكة </option>
+                                <option value="Medina"> المدينة</option>
+                                <option value="Al-Qasim"> القصيم</option>
+                                <option value="Al-Ṭaʾif"> الطائف </option>
+                                <option value="Jiddah"> جدة </option>
+                                <option value="Al-Dammām"> الدمام </option>
+                            </select> 
+                        </div>
+                        <div class="divider"></div>
+                        <div class="language dropDown">
+                            <span class="dropIcon"> <img src="images/global.png" alt="global"> </span>
+                            <select default>
+                                <option value="Arabic"> العربية </option>
+                                <option value="English"> English </option>
+                            </select>  
+                        </div>
+                        <div class="divider"></div>
+                        <div class="favourite">  
+                            <a href="favourite.html"> <img src="images/heart.png" alt="heart"> <span> المفضلة </span> </a>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <span class="userIcon"> <img src="images/user.png" alt="user"> </span>
+                        <div class="login"> <a href="login.html">  دخول / إنشاء حساب </a> </div>
+                        <div class="loggined"> <a href="user-profile.html"> الملف الشخصى  </a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerMiddle">
+            <div class="container">
+                <div class="flexBox">
+                    <div class="logoBox">
+                        <a class="logo" href="index.html"> <img src="images/logo.png" alt="logo" class="img-fluid"> </a>
+                        <div class="mobileIcons">
+                            <a href="tel:+201099285016" class="icon"> <img src="images/support.png" alt="support"></a>
+                            <a class="notificationAlert" href="notifications.html"> <img src="images/notification.png" alt="icon"> <span> 0 </span> </a>
+                            <a href="cart.html" class="icon cartIcon"> 
+                                <img src="images/cart.png" alt="cart">
+                                <span> 3 </span>
+                            </a>
+                            <div class="menuBtn"> <span></span> <span></span> <span></span></div>
+                            <div class="bodyOverlay"></div>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <input type="text" placeholder="ابحث هنا">
+                        <button type="submit"> <i class="icofont-search"></i> </button>
+                    </div>
+                    <div class="middleIcons">
+                        <div class="support">
+                            <a  href="tel:+201099285016" class="icon"> <img src="images/support.png" alt="support"></a>
+                            <div class="data">
+                                <h4> خدمة العملاء </h4>
+                                <a href="tel:+201099285016"> +201099285016 </a>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <a class="cart" href="cart.html">
+                            <div class="icon cartIcon"> 
+                                <img src="images/cart.png" alt="cart">
+                                <span> 3 </span>
+                            </div>
+                            <div class="data">
+                                <h4> عربة التسوق </h4>
+                                <h5>  50.40رس  </h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerBottom">
+            <div class="container">
+                <div class="navMenu">
+                    <a href="index.html"> الرئيسية </a>
+                    <a href="flowers.html"> الورود </a>
+                    <a href="chocolate.html">  الشكولاتة </a>
+                    <a href="plants.html"> النباتات </a>
+                    <a href="gifts.html"> الهدايا </a>
+                    <a href="package-design.html"> صمم باقتك </a>
+                    <a href="subscriptions.html"> الاشتراكات </a>
+                    <a href="special-request.html"> طلب خاص </a>
+                </div>
+                <div class="headerNotifications">
+                    <a class="notificationAlert" href="notifications.html"> <img src="images/notification.png" alt="icon"> <span> 0 </span> </a>
+                </div>
+            </div>
+        </div>         
+    </div>
+
+    <!-- Subscriptions Page  -->
+    <div class="page">
+        <div class="pageHeader">
+            <h1> الملف الشخصى </h1>
+            <ul>
+                <li> <a href="index.html"> <img src="images/home.png"> الرئيسية </a> </li>
+                <li> الملف الشخصى </li> 
+            </ul>
+        </div>
+        <div class="pageContent secPaddingSm grey">
+            <div class="profilePage">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-3">
+                            <div class="profileSide">
+                                <a href="user-profile.html">  <span> <img src="images/user-icon-1.png" alt="icon"> </span> الملف الشخصى   </a>
+                                <a href="user-orders.html">  <span> <img src="images/user-icon-2.png" alt="icon"> </span>  طلباتى </a>
+                                <a href="user-subscriptions.html"  class="active">  <span> <img src="images/user-icon-3.png" alt="icon"> </span> إشتركاتى </a>
+                                <a href="user-addresses.html">  <span> <img src="images/user-icon-4.png" alt="icon"> </span> عناويني </a>
+                                <a href="index.html">  <span> <img src="images/logout.png" alt="icon"> </span>  تسجيل خروج </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-9">
+                            <div class="profileWrapper">
+                                <div class="profileTabs">
+                                    <a href="#tab1" class="profileTab" class="active"> </a>
+                                    <a href="#tab2" class="profileTab"> </a>
+                                    <a href="#tab3" class="profileTab"> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <div class="footerInfo">
+                        <div class="logo">
+                            <a href="index.html"> <img src="images/logo.png" alt="logo" class="img-fluid"> </a>
+                        </div>
+                        <p> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-5">
+                    <div class="links">
+                        <div class="footerLinks">
+                            <h3> حسابي </h3>
+                            <div class="list">
+                                <a href="user-profile.html">  حسابي </a>
+                                <a href="profile-requests.html"> طلباتى </a>
+                                <a href="profile=subscriptions.html"> الاشتراكات </a>
+                                <a href="special-request.htm"> طلب خاص </a>
+                            </div>
+                        </div>
+                        <div class="footerLinks">
+                            <h3> روابط هامة </h3>
+                            <div class="list">
+                                <a href="about.html">  من نحن </a>
+                                <a href="contact.html"> تواصل معنا  </a>
+                                <a href="policy.html">  الشروط والاحكام </a>
+                                <a href="designers.html"> المصممين</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <div class="follow">
+                        <h3> تابعنا على </h3>
+                        <div class="social">
+                            <a href="#"> <img src="images/youtube.png" alt="social"> </a>
+                            <a href="#"> <img src="images/snapchat.png" alt="social"> </a>
+                            <a href="#"> <img src="images/whatsapp.png" alt="social"> </a>
+                            <a href="#"> <img src="images/instagram.png" alt="social"> </a>
+                        </div>
+                    </div>
+                    <div class="footerPayments">
+                        <h3> وسائل الدفع </h3>
+                        <div class="footerPaymentsList">
+                            <img src="images/pay-1.png" alt="payment">
+                            <img src="images/pay-2.png" alt="payment">
+                            <img src="images/pay-3.png" alt="payment">
+                            <img src="images/pay-4.png" alt="payment">
+                            <img src="images/pay-5.png" alt="payment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CopyRight  -->
+    <div class="copyright">
+        <div class="container">
+            <div class="copyrightBox">
+                <p> جميع الحقوق محفوظة لـ  <a href="#"> لافندورا </a> </p>
+                <a href="#"> <img src="images/sds.png" alt="logo"> </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugins/owlCarousel/owl.carousel.min.js"></script>
+    <script src="plugins/datetimepicker/datetimepicker.min.js"></script>
+    <script src="plugins/animation/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+</html>
