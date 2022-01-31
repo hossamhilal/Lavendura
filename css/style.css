@@ -18,13 +18,14 @@
     --title: #2F2F2F;
     --red: #E01F1F;
     --redDark: #D51515;
-    --orange: #FFB300;
-    --green : #37B44C;
+    --redDarkk: #850505;
+    --green: #37B44C;
     --black: #2F2F2F;
     --grey: #F7F4F6;
     --greyLight: #F8F8F8;
     --greyDark: #E9E9E9;
     --greyBg: #EFEFEF;
+    --greyBgLight : #7C7C7C;
     --dark: #464646;
     --border: 1px solid #F0F0F0;
     --border2: 1px solid var(--greyDark);
@@ -32,7 +33,9 @@
     --facebook: #1877F2;
     --twitter: #1DA1F2;
     --whatsapp: #25d366;
-    --orangeOpacity : rgba(255,179,0,.10);
+    --orange: #FFB300;
+    --orangeDark: #f99500;
+    --orangeOpacity: rgba(255, 179, 0, .10);
 }
 
 /* fonts*/
@@ -236,31 +239,49 @@ textarea:active {
     color: var(--white);
 }
 
-.outLineBtn {
+.primaryOutlline {
     background: transparent;
     color: var(--primaryColor);
 }
 
-.outLineBtn span {
+.primaryOutlline span {
     color: var(--primaryColor);
 }
 
 .orangeBtn {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.orangeBtn::before {
+    background: var(--orangeDark);
+}
+
+.orangeOutlline {
     border-color: var(--orange);
     background: var(--orangeOpacity);
 }
 
-.orangeBtn span {
+.orangeOutlline span {
     color: var(--black);
     font-weight: 400;
 }
 
-.orangeBtn::before {
+.orangeOutlline::before {
     background: var(--orange);
 }
 
-.orangeBtn:hover span {
+.orangeOutlline:hover span {
     color: var(--white);
+}
+
+.redBtn {
+    border-color: var(--red);
+    background: var(--red);
+}
+
+.redBtn::before {
+    background: var(--redDarkk);
 }
 
 button:active,
@@ -894,6 +915,9 @@ button:focus {
 }
 
 @media (min-width:768px) and (max-width:992px) {
+    .navMenu a {
+        font-size: 15px;
+    }
 
     .support .data,
     .cart .data {
@@ -1534,10 +1558,8 @@ button:focus {
 
 .apps {
     background: var(--dark);
-    background-image: url('../images/apps.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     color: var(--white);
+    padding-top: 50px;
 }
 
 .apps h2 {
@@ -1595,9 +1617,26 @@ button:focus {
     color: var(--white);
 }
 
+.appsVectors {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    overflow: hidden;
+}
+
+.appsVectors img {
+    max-width: 90%;
+}
+
 @media screen and (max-width:768px) {
+    .apps {
+        padding-top: 30px;
+    }
+
     .apps h2 {
         font-size: 22px;
+        margin-bottom: 10px;
     }
 
     .apps p {
@@ -1611,6 +1650,10 @@ button:focus {
 
     .download h5 {
         font-size: 12px;
+    }
+
+    .appsContent {
+        padding-bottom: 30px;
     }
 }
 
@@ -1947,8 +1990,6 @@ button:focus {
 
 .statusFooter .greyBtn {
     margin-inline-start: 15px;
-    background: var(--textLight);
-    border-color: var(--textLight);
 }
 
 .statusFooter .greyBtn span {
@@ -2857,6 +2898,10 @@ button:focus {
     animation-fill-mode: forwards;
 }
 
+.addToFav.favourited {
+    background-position: right;
+}
+
 .productIcon.zoom {
     padding: 5px;
     margin-bottom: 0;
@@ -3447,11 +3492,14 @@ hr {
 .tabsBtns {
     display: flex;
     align-items: center;
+}
+
+.productTabs {
     padding: 0 15px;
     border-bottom: var(--border);
 }
 
-.tabBtn {
+.productTab {
     padding: 15px;
     color: var(--text);
     font-weight: 400;
@@ -3459,15 +3507,15 @@ hr {
     position: relative;
 }
 
-.tabBtn:hover {
+.productTab:hover {
     color: var(--primaryColor);
 }
 
-.tabBtn.active {
+.productTab.active {
     color: var(--black);
 }
 
-.tabBtn::after {
+.productTab::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -3480,7 +3528,7 @@ hr {
     transition: all .4s ease-in-out;
 }
 
-.tabBtn.active::after {
+.productTab.active::after {
     transform: scale(1);
 }
 
@@ -3669,7 +3717,7 @@ hr {
         height: 30px;
     }
 
-    .tabBtn {
+    .productTab {
         padding: 10px 8px;
         font-size: 13px;
     }
@@ -3689,7 +3737,7 @@ hr {
         margin-bottom: 5px;
     }
 
-    .subscriptionTable td ,
+    .subscriptionTable td,
     .table td,
     .table th {
         padding: 10px;
@@ -4243,7 +4291,7 @@ hr {
 }
 
 .coupon input {
-    width: calc( 100% - 105px);
+    width: calc(100% - 105px);
     height: 100%;
     font-size: 12px;
     border: 0;
@@ -4291,8 +4339,8 @@ hr {
     margin: 0;
 }
 
-.applied .couponBtn label ,
-.failed .couponBtn label  {
+.applied .couponBtn label,
+.failed .couponBtn label {
     display: none;
 }
 
@@ -4300,7 +4348,7 @@ hr {
     display: none;
 }
 
-.applied .couponBtn span ,
+.applied .couponBtn span,
 .failed .couponBtn span {
     display: flex;
     align-items: center;
@@ -4315,7 +4363,7 @@ hr {
     display: none;
 }
 
-.applied .couponMessage ,
+.applied .couponMessage,
 .failed .couponMessage {
     display: block;
 }
@@ -4362,19 +4410,19 @@ hr {
     .subscriptionBox .subscription {
         margin: 0;
     }
-    
+
     .boxPadding {
         padding: 15px;
     }
-    
+
     .subscriptionBox h4 {
         font-size: 14px;
     }
-    
+
     .subscriptionBox h3 {
         font-size: 14px;
     }
-    
+
     .period:not(:last-of-type) {
         margin-inline-end: 5px;
     }
@@ -4388,43 +4436,43 @@ hr {
         font-size: 12px;
         padding: 0 15px;
     }
-    
+
     .visitSearch input::placeholder {
         font-size: inherit;
     }
-    
+
     .lineProduct {
         flex-wrap: wrap;
         border: var(--border);
         padding: 10px;
         border-radius: 5px;
     }
-    
+
     .lineProduct .count {
         order: 4;
         height: 35px;
         width: 80px;
         font-size: 12px;
         margin-inline-start: auto;
-    } 
+    }
 
     .visitDate h5 {
         font-size: 13px;
     }
-    
+
     .subscriptionDate {
         width: 110px;
     }
-    
+
     .subscriptionDate h4 {
         font-size: 12px;
     }
-    
+
     .subscriptionDate p {
         font-size: 12px;
         line-height: 20px;
     }
-    
+
     .subscriptionDate:not(:last-of-type) {
         margin-inline-end: 10px;
     }
@@ -4432,25 +4480,25 @@ hr {
     .subscriptionDetailsPage .lineProduct {
         padding: 5px;
     }
-    
+
     .subscriptionDetailsPage .count {
         width: 30px;
         height: 30px;
         padding: 0;
     }
-    
+
     .subscriptionDetailsPage .countNum {
         width: 25px;
         border-radius: 25px;
     }
-    
+
     .subscriptionDetailsPage .productImg {
         margin-inline-end: 5px;
         margin-bottom: 0;
         width: 40px;
         height: 40px;
     }
-    
+
     .subscriptionDetailsPage .lineProduct h3 {
         margin: 0;
     }
@@ -4469,7 +4517,7 @@ hr {
         font-size: 12px;
         order: 2;
     }
-    
+
     .removeProduct {
         margin-inline-end: 10px;
         order: 3;
@@ -4477,8 +4525,9 @@ hr {
 }
 
 @media (min-width:425px) and (max-width:768px) {
-    .removeProduct ,
-    .productImg ,
+
+    .removeProduct,
+    .productImg,
     .lineProduct h3 {
         margin-bottom: 0;
         margin-inline-end: 10px;
@@ -4560,7 +4609,7 @@ hr {
     visibility: visible;
 }
 
-@media screen and (max-width:768px) {  
+@media screen and (max-width:768px) {
     .radio {
         font-size: 13px;
         width: 100px;
@@ -4760,7 +4809,7 @@ hr {
     border-start-end-radius: 10px;
 }
 
-.cartTable th , 
+.cartTable th,
 .cartTable td {
     padding: 10px;
     vertical-align: middle;
@@ -4772,38 +4821,38 @@ hr {
     font-size: 14px;
 }
 
-.cartTable td  {
+.cartTable td {
     font-size: 13px;
 }
 
-.cartTable th:first-of-type , 
+.cartTable th:first-of-type,
 .cartTable td:first-of-type {
     width: 50px;
 }
 
-.cartTable th:nth-child(2), 
+.cartTable th:nth-child(2),
 .cartTable td:nth-child(2) {
     width: 70px;
 }
 
-.cartTable th:nth-child(3), 
+.cartTable th:nth-child(3),
 .cartTable td:nth-child(3) {
     text-align: initial;
 }
 
-.cartTable th:nth-child(4), 
+.cartTable th:nth-child(4),
 .cartTable td:nth-child(4) {
     width: 130px;
 }
 
-.cartTable th:nth-child(5), 
+.cartTable th:nth-child(5),
 .cartTable td:nth-child(5) {
-    width: 130px;
+    width: 110px;
 }
 
-.cartTable th:nth-child(6), 
+.cartTable th:nth-child(6),
 .cartTable td:nth-child(6) {
-    width: 130px;
+    width: 110px;
 }
 
 .cartTable .removeProduct {
@@ -4814,7 +4863,7 @@ hr {
     margin: 0;
 }
 
-.cartTable  h3 {
+.cartTable h3 {
     font-size: 13px;
     margin: 0;
     color: var(--black);
@@ -4831,6 +4880,10 @@ hr {
 
 .cartTable td {
     color: var(--text);
+}
+
+.cartTable td:last-of-type {
+    color: var(--primaryColor);
 }
 
 .cartTable .count input {
@@ -4864,36 +4917,47 @@ hr {
         padding: 10px;
         border-bottom: var(--border);
     }
-    
-    .cartTable thead {
-        display: none;
-    }
-    
+
     .cartTable tr {
         display: flex;
         flex-wrap: wrap;
         padding: 5px 0 0 0;
     }
-    
+
+    .cartTable h3 {
+        font-size: 12px;
+    }
+
+    .cartTable th:nth-child(3),
+    .cartTable td:nth-child(3) {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .cartTable thead {
+        display: none;
+    }
+
     .table td:first-of-type {
         padding: 5px 10px;
     }
-    
+
     .cartTable td:nth-child(2) {
         order: 1;
         padding: 0;
     }
-    
+
     .cartTable td:nth-child(3) {
         order: 2;
-        width: calc( 100% - 120px );
+        width: calc(100% - 120px);
     }
-    
+
     .cartTable td:nth-child(4) {
         order: 3;
         width: 90px;
     }
-    
+
     .cartTable td:nth-child(5) {
         order: 4;
         width: 33%;
@@ -4901,7 +4965,7 @@ hr {
         height: 35px;
         margin-top: auto;
     }
-    
+
     .cartTable td:nth-child(6) {
         order: 5;
         width: 70px;
@@ -4910,14 +4974,10 @@ hr {
         height: 35px;
         margin-top: auto;
     }
-    
+
     .cartTable .count {
         width: 90px;
         height: 35px;
-    }
-    
-    .cartTable h3 {
-        font-size: 12px;
     }
 }
 
@@ -4941,7 +5001,7 @@ hr {
     position: absolute;
     top: 50%;
     right: 3%;
-    width: calc( 100% - 6% );
+    width: calc(100% - 6%);
     height: 4px;
     background: var(--greyDark);
 }
@@ -4984,23 +5044,23 @@ hr {
     margin: 0;
 }
 
-.wizardStep.active ,
+.wizardStep.active,
 .wizardStep.finished {
     color: var(--black);
 }
 
-.wizardStep.active label ,
+.wizardStep.active label,
 .wizardStep.finished label {
     font-weight: 400;
 }
 
-.wizardStep.active span ,
+.wizardStep.active span,
 .wizardStep.finished span {
     border-color: var(--orange);
     color: var(--orange);
 }
 
-.wizardStep span::after{
+.wizardStep span::after {
     content: '';
     display: flex;
     align-items: center;
@@ -5028,7 +5088,7 @@ hr {
     content: '\eed6';
     opacity: 1;
     visibility: visible;
-    font-family: IcoFont!important;
+    font-family: IcoFont !important;
 }
 
 .wizardTab {
@@ -5055,11 +5115,11 @@ hr {
     .wizardSteps::before {
         display: none;
     }
-    
+
     .wizardStep {
         padding-inline-start: 0;
     }
-    
+
     .wizardStep::before {
         content: '';
         width: 4px;
@@ -5068,7 +5128,7 @@ hr {
         background: var(--greyDark);
         margin-inline-end: 15px;
     }
-    
+
     .wizardStep::after {
         content: '';
         width: 4px;
@@ -5079,11 +5139,12 @@ hr {
         background: var(--orange);
         transition: all .7s ease-in-out;
     }
-    
-    .wizardStep.finished::after , .wizardStep.active::after {
+
+    .wizardStep.finished::after,
+    .wizardStep.active::after {
         height: 50px;
     }
-    
+
     .wizardProgress {
         display: none;
     }
@@ -5094,7 +5155,7 @@ hr {
         font-size: 12px;
         padding: 0 5px;
     }
-    
+
     .wizardStep span {
         width: 20px;
         height: 20px;
@@ -5104,9 +5165,10 @@ hr {
 }
 
 @media screen and (max-width:768px) {
-    .wizardSteps ,
-    .checkoutBox ,
-    .wizardSuccess  {
+
+    .wizardSteps,
+    .checkoutBox,
+    .wizardSuccess {
         padding: 15px;
     }
 }
@@ -5161,6 +5223,10 @@ hr {
     background: var(--orange);
 }
 
+.profileSide a:last-of-type:hover {
+    background: var(--red);
+}
+
 .profileSide span {
     width: 30px;
     height: 30px;
@@ -5206,7 +5272,7 @@ hr {
 
 .avatarFile {
     position: absolute;
-    top: calc( 50% - 15px );
+    top: calc(50% - 15px);
     left: -15px;
     width: 30px;
     height: 30px;
@@ -5224,7 +5290,7 @@ hr {
     background: var(--orange);
     border-radius: 25px;
     position: absolute;
-    top: calc( 50% - 15px );
+    top: calc(50% - 15px);
     left: -15px;
     cursor: pointer;
 }
@@ -5245,40 +5311,1017 @@ hr {
 
 .profileFooterBtns {
     display: flex;
-    padding:  20px 0;
+    padding: 20px 0;
 }
 
 .profileFooterBtns .primaryBtn {
     min-width: 25%;
 }
 
-.profileFooterBtns .orangeBtn  {
+.profileFooterBtns .orangeOutlline {
     margin-inline-start: 20px;
 }
 
+.profileTabs {
+    background: var(--white);
+    padding: 6px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
 
-@media screen and (max-width:768px) {}
+.profileTab {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--text);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.profileTab:hover {
+    color: var(--orange);
+}
+
+.profileTab.active {
+    background: var(--primaryColor);
+    color: var(--white);
+}
+
+.profileTab img {
+    margin-inline-end: 5px;
+}
+
+.profileTab.active img {
+    filter: brightness(0) invert(1);
+}
+
+.profileSubscription {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.profileSubscription .pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 143px;
+    height: 118px;
+    padding: 15px;
+    background: var(--orangeOpacity);
+    margin-inline-end: 15px;
+    border-radius: 12px;
+}
+
+.profileOrder .pic {
+    background: var(--greyLight);
+    padding: 10px;
+}
+
+.profileSubscription .data {
+    width: 100%;
+}
+
+.profileSubscriptionHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.profileSubscription h2 {
+    font-size: 16px;
+}
+
+.profileSubscription h4 {
+    color: var(--text);
+    font-size: 14px;
+    margin: 0;
+}
+
+.profileSubscription h6 {
+    color: var(--text);
+    font-size: inherit;
+    margin-inline-start: auto;
+    margin-bottom: 0;
+}
+
+.profileSubscription ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profileSubscription li {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    margin-bottom: 10px;
+}
+
+.profileSubscription li:not(:last-of-type) {
+    margin-inline-end: 50px;
+}
+
+.profileSubscription label {
+    margin: 0;
+    margin-inline-end: 5px;
+    color: var(--text);
+}
+
+.profileSubscriptionFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: var(--border);
+    border-width: 2px;
+    padding-top: 10px;
+}
+
+.profileSubscription h5 {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    margin: 0;
+    margin-inline-end: 15px;
+}
+
+.profileSubscriptionFooter img {
+    margin-inline-end: 8px;
+}
+
+.processing .profileSubscriptionFooter span {
+    color: var(--orange);
+}
+
+.completed .profileSubscriptionFooter span {
+    color: var(--green);
+}
+
+.canceled .profileSubscriptionFooter span {
+    color: var(--red);
+}
+
+.profileSubscription a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    color: var(--text);
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+
+.profileSubscription a:hover {
+    color: var(--orange);
+}
+
+.profileSubscription a i {
+    color: var(--orange);
+    margin-top: 4px;
+    font-weight: 700;
+    margin-inline-end: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.profileSubscription a:hover i {
+    transform: translateX(-10px);
+    display: inline-flex;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    margin: 0;
+}
+
+.subscriptionProgress {
+    background: var(--white);
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
+
+.subscriptionProgressSteps {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.subscriptionStep {
+    display: inline-flex;
+    width: -webkit-fill-available;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--textLight);
+    font-weight: 400;
+    border-radius: 25px;
+    height: 45px;
+    padding: 0 10px;
+    z-index: 1;
+}
+
+.subscriptionStep.active {
+    background: var(--primaryColor);
+    color: var(--white);
+}
+
+.userSubStatus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background: var(--greyBg);
+    border-radius: 25px;
+    margin-inline-end: 10px;
+}
+
+.userSubStatus::before {
+    content: '';
+    width: 6px;
+    height: 14px;
+    border: 1px solid var(--white);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: block;
+    position: absolute;
+    top: 4px;
+}
+
+.subscriptionStep.active .userSubStatus,
+.userSubStatus.Done {
+    background: var(--orange);
+}
+
+.subscriptionStep label {
+    margin: 0;
+}
+
+.subsProgress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 45px;
+    background: var(--primaryColor);
+    border-radius: 25px;
+    z-index: 0;
+}
+
+.userSubscriptionHead {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.userSubscriptionHead h2 {
+    font-size: 18px;
+}
+
+.userSubscriptionHead label {
+    color: var(--text);
+    font-size: 16px;
+    margin-inline-end: 5px;
+}
+
+.userSubscriptionHead p {
+    font-size: 14px;
+}
+
+.userSubscriptionHead p label {
+    font-size: inherit;
+}
+
+.productTable img {
+    margin-inline-end: 3px;
+}
+
+.userSubscriptionPayMethod {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.userSubscriptionPayMethod h6 {
+    margin: 0;
+}
+
+.userSubscriptionPayMethod img {
+    max-width: 45px;
+    margin-inline-end: 15px;
+}
+
+.userSubVisits {
+    display: flex;
+    align-items: center;
+}
+
+.userSubVisits .userSubStatus {
+    margin-inline-end: 15px;
+}
+
+.userSubscriptionPage .redBtn {
+    margin: 20px 0;
+}
+
+.userSubscriptionPage .orangeBtn {
+    max-width: 100%;
+}
+
+.orderPage .cartTable .count {
+    justify-content: center;
+}
+
+.profileTitle {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.profileTitle h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.address {
+    background: var(--white);
+    border-radius: 5px;
+    border: 2px solid var(--white);
+    transition: all .4s ease-in-out;
+}
+
+.address:hover {
+    border-color: var(--primaryColor);
+    background: transparent;
+}
+
+.addressHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 15px;
+    border-bottom: var(--border);
+}
+
+.address h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.addressIcons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addressIcons>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: 0;
+    cursor: pointer;
+    margin-inline-start: 5px;
+    transition: all .4s ease-in-out;
+}
+
+.deleteAddress {
+    color: var(--text);
+    background: var(--grey);
+    font-size: 13px;
+}
+
+.deleteAddress:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.addressIcons a {
+    color: var(--primaryColor);
+    background: rgb(127 70 100 / 8%);
+}
+
+.addressIcons a:hover {
+    color: var(--white);
+    background: var(--primaryColor);
+}
+
+.addressBody {
+    padding: 10px 15px;
+}
+
+.address h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.address p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.address label {
+    min-width: 50px;
+    color: var(--primaryColor);
+}
+
+.address h5 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.addresses .col-12 {
+    padding: 7px;
+}
+
+.addresses .row {
+    margin: 0 -7px;
+}
+
+.addresses .primaryBtn {
+    margin: 10px 0;
+    width: 180px;
+}
+
+.addresses .primaryBtn i {
+    margin-inline-start: 10px;
+}
+
+.profileForm {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.addressForm {
+    background: var(--white);
+    border-radius: 5px;
+}
+
+.addressFormHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex-wrap: wrap;
+    border-bottom: var(--border);
+}
+
+.addressForm h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.addressForm .checkBox {
+    margin: 0;
+}
+
+.addressFormBody {
+    padding: 15px;
+}
+
+.addressForm .field label {
+    font-size: 12px;
+}
+
+.addressForm .field .fieldInput::placeholder {
+    font-size: 11px;
+}
+
+.profileForm .primaryBtn {
+    margin-top: 20px;
+    width: 320px;
+    max-width: 100%;
+}
+
+.addressMap {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .profileSide a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .profileTab {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .profileSubscription {
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+
+    .profileSubscription .pic {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profileSubscription .data {
+        width: calc(100% - 70px);
+    }
+
+    .profileSubscriptionHead {
+        align-items: flex-start;
+    }
+
+    .profileSubscription h2 {
+        font-size: 14px;
+        margin-inline-end: 20px;
+    }
+
+    .profileSubscription h6 {
+        margin-inline-start: 0;
+    }
+
+    .profileSubscription li {
+        margin-bottom: 5px;
+    }
+
+    .profileSubscription li:not(:last-of-type) {
+        margin-inline-end: 10px;
+    }
+
+    .profileSubscriptionFooter {
+        padding-top: 5px;
+    }
+
+    .profileSubscription a {
+        margin-top: 5px;
+    }
+
+    .subscriptionProgress {
+        padding: 10px;
+    }
+
+    .subscriptionStep .userSubStatus {
+        width: 18px;
+        height: 18px;
+    }
+
+    .subscriptionStep .userSubStatus::before {
+        width: 5px;
+        height: 11px;
+        top: 3px;
+    }
+
+    .userSubscriptionHead {
+        margin-bottom: 5px;
+    }
+
+    .userSubscriptionHead h2 {
+        margin: 0;
+    }
+
+    .userSubscriptionPayMethod {
+        padding: 10px;
+    }
+
+    .userSubscriptionPayMethod h6 {
+        font-size: 14px;
+    }
+
+    .userSubVisits .userSubStatus {
+        margin-inline-end: 10px;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+
+    .orderProgress .subscriptionStep {
+        padding: 0;
+        font-size: 10px;
+    }
+
+    .orderProgress .subscriptionStep .userSubStatus {
+        margin-inline-end: 5px;
+    }
+
+    .addressHead {
+        padding: 5px 10px;
+    }
+
+    .address h3 {
+        font-size: 14px;
+    }
+
+    .addressIcons>* {
+        width: 25px;
+        height: 25px;
+        margin-inline-start: 8px;
+    }
+
+    .addressBody {
+        padding: 5px 10px;
+    }
+
+    .address h4 {
+        font-size: 14px;
+    }
+
+    .addressForm h3 {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:424px) {
+    .subscriptionProgress {
+        padding: 0;
+    }
+
+    .subscriptionStep {
+        flex-direction: column;
+        font-size: 11px;
+        padding: 0 5px;
+        border-radius: 5px;
+    }
+
+    .userSubscriptionPage .subscriptionTable td {
+        font-size: 12px;
+    }
+
+    .userSubVisits {
+        margin: 0 -5px;
+    }
+
+    .subscriptionProducts .countNum {
+        width: 20px;
+    }
+
+    .subscriptionProducts .count {
+        width: 25px;
+        height: 25px;
+    }
+
+    .orderProgress {
+        padding: 0;
+    }
+
+    .orderProgress .subscriptionStep {
+        padding: 0;
+        text-align: center;
+    }
+
+    .orderPage .cartTable td {
+        padding: 5px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .orderPage .cartTable td:nth-child(2) {
+        width: calc(100% - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .orderPage .cartTable td:nth-child(3) {
+        margin-inline-start: auto;
+        width: 60px;
+    }
+
+    .orderPage .cartTable td:nth-child(4) {
+        height: 35px;
+    }
+
+    .orderPage .cartTable td:nth-child(5) {
+        margin: 0;
+        padding: 5px;
+    }
+
+    .orderPage .cartTable .count {
+        height: 25px;
+    }
+}
+
+@media (min-width:425px) and (max-width:768px) {
+    .subscriptionStep {
+        height: 30px;
+        padding: 0 5px;
+        font-size: 12px;
+    }
+
+    .subsProgress {
+        height: 30px;
+    }
+}
+
+@media (min-width:768px) {
+    .userSubscriptionPage thead {
+        background: var(--grey);
+    }
+
+    .userSubscriptionPage .cartTable th:nth-child(1),
+    .userSubscriptionPage .cartTable td:nth-child(1) {
+        width: 120px;
+        text-align: center;
+    }
+
+    .userSubscriptionPage .cartTable th:nth-child(2),
+    .userSubscriptionPage .cartTable td:nth-child(2) {
+        width: auto;
+        min-width: 200px;
+        text-align: inherit;
+    }
+
+    .userSubscriptionPage .cartTable th:nth-child(3),
+    .userSubscriptionPage .cartTable td:nth-child(3) {
+        width: 120px;
+        text-align: center;
+    }
+
+    .userSubscriptionPage .cartTable th:first-of-type,
+    .userSubscriptionPage .cartTable th:last-of-type {
+        border-radius: 0;
+    }
+
+    .userSubscriptionPage .cartTable .productImg {
+        margin: auto;
+    }
+}
+
+/*==========================||---------------------------||========================*/
+/*==========================||       Notifications       ||========================*/
+/*==========================||---------------------------||========================*/
+
+.notificationsPage {
+    max-width: 870px;
+    margin: auto;
+}
+
+.notification {
+    background: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.notification .icon {
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: var(--white);
+    margin-inline-end: 20px;
+}
+
+.notification h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.notification h6 {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+}
+
+.notification .body i {
+    margin-inline-start: 5px;
+    display: inline-flex;
+}
+
+.notification a {
+    color: var(--black);
+    font-weight: 600;
+}
+
+.notification a:hover {
+    color: var(--orange)
+}
+
+@media screen and (max-width:768px) {
+    .notification {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    .notification .icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        margin-inline-end: 10px;
+    }
+
+    .notification .body {
+        width: calc(100% - 55px);
+    }
+
+    .notification h3 {
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .notification h6 {
+        font-size: 11px;
+    }
+}
+
+
+/*==========================||---------------------------||========================*/
+/*==========================||          Designers        ||========================*/
+/*==========================||---------------------------||========================*/
+
+.deisnersFilter {
+    padding: 15px;
+    margin-bottom: 8px;
+}
+
+.pageFilter h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.designer {
+    background: var(--white);
+    padding: 25px 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.designer .pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.designer img {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.designer h3 {
+    font-size: 20px;
+    margin: 0;
+    color: var(--black);
+}
+
+.designer:hover h3 {
+    color: var(--primaryColor);
+}
+
+@media screen and (max-width:424px) { 
+    .deisnersFilter {
+        flex-direction: column;
+    }
+
+    .deisnersFilter h2 {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .deisnersFilter h2 {
+        font-size: 14px;
+    }
+
+    .designer {
+        padding: 12px;
+    }
+
+    .designer .pic {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .designer h3 {
+        font-size: 14px;
+    }    
+}
 
 
 /*==========================||---------------------------||========================*/
 /*==========================||          Volunteer        ||========================*/
 /*==========================||---------------------------||========================*/
 
-@media screen and (max-width:768px) {}
+.aboutPage {
+    background: var(--greyLight);
+}
 
+.aboutArticle {
+    background-image: url('../images/about-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
-/*==========================||---------------------------||========================*/
-/*==========================||          Volunteer        ||========================*/
-/*==========================||---------------------------||========================*/
+.aboutArticle h6 {
+    font-size: 14px;
+    color: var(--primaryColor);
+}
 
-@media screen and (max-width:768px) {}
+.aboutArticle h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
 
+.aboutArticle p {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
 
-/*==========================||---------------------------||========================*/
-/*==========================||          Volunteer        ||========================*/
-/*==========================||---------------------------||========================*/
+.aboutItem {
+    display: flex;
+}
 
-@media screen and (max-width:768px) {}
+.aboutContent {
+    max-width: 95%;
+}
+
+.aboutItemData {
+    width: -webkit-fill-available;
+}
+
+.aboutArticle h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.aboutArticle .aboutItem p {
+    font-size: 12px;
+}
+
+.aboutVector {
+    position: relative;
+    padding-inline-end: 20px;
+    padding-bottom: 20px;
+    text-align: end;
+}
+
+.aboutVector img {
+    border-radius: 31px;
+    position: relative;
+    z-index: 1;
+}
+
+.aboutVector::after {
+    content: '';
+    background: var(--primaryColor);
+    border-radius: 31px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 300px;
+    height: 300px;
+    transform: rotate(-11deg);
+}
+
+@media screen and (max-width:768px) {
+    .aboutArticle h2 {
+        font-size: 18px;
+        margin-bottom: 7px;
+    }
+    
+    .aboutArticle p {
+        font-size: 12px;
+    }
+    
+    .aboutContent {
+        max-width: 100%;
+    }
+    
+    .aboutArticle .aboutItem p {
+        font-size: 11px;
+        line-height: 20px;
+    }
+    
+    .aboutVector::after {
+        width: 230px;
+        height: 230px;
+    }
+}
 
 
 /*==========================||---------------------------||========================*/

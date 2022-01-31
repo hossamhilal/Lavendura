@@ -121,124 +121,189 @@
         </div>         
     </div>
 
-    <!-- Cart Page  -->
-    <div class="page">
+    <!-- Order Page  -->
+    <div class="page orderPage">
         <div class="pageHeader">
-            <h1> سلة المشتريات </h1>
+            <h1> الملف الشخصى </h1>
             <ul>
                 <li> <a href="index.html"> <img src="images/home.png"> الرئيسية </a> </li>
-                <li> سلة المشتريات </li> 
+                <li> <a href="user-profile.html"> الملف الشخصى </a> </li>
+                <li> تفاصيل الطلب </li> 
             </ul>
         </div>
         <div class="pageContent secPaddingSm grey">
-            <div class="subscriptionPage subscriptionDetailsPage">
+            <div class="subscriptionPage subscriptionDetailsPage userSubscriptionPage">
                 <div class="container">
-                    <form action="checkout.html">
-                        <div class="row">
-                            <div class="col-12 col-lg-9">
-                                <div class="subscriptionBox cartTable">
-                                    <h4> سلة المشتريات  <span> ( 4 منتجات ) </span></h4> 
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"> </th>
-                                                <th scope="col"> الصورة </th>
-                                                <th scope="col"> اسم المنتج </th>
-                                                <th scope="col"> الكمية</th>
-                                                <th scope="col"> سعر الوحدة </th>
-                                                <th scope="col"> السعر الاجمالى </th>
-                                            </tr>
-                                        </thead>
+                    <div class="subscriptionProgress orderProgress">
+                        <div class="subscriptionProgressSteps">
+                            <div class="subscriptionStep active"> <span class="userSubStatus Done"></span> <label> تم إستلام الطلب </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> جارى التجهيز </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> في الطريق </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> تم التسليم </label> </div>
+                            <div class="subsProgress"></div>
+                        </div>
+                    </div>                   
+                    <div class="row">
+                        <div class="col-12 col-lg-9">
+                            <div class="userSubscriptionHead">
+                                <h2> <label> رقم الطلب </label> <span> #879554825234556 </span></h2>
+                                <p>  <label>  تم الطلب في :</label> <span> 13/11/2021 </span> </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-9">                         
+                            <div class="subscriptionBox subscriptionTable">
+                                <h4> تفاصيل الطلب </h4> 
+                                <div class="productTable">
+                                    <table class="table table-striped">
                                         <tbody>
                                             <tr>
-                                                <td> <span class="removeProduct"> <img src="images/trash.png" alt="icon"> </span> </td>
-                                                <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
-                                                <td> <h3> توليب بنفسجي </h3> </td>
-                                                <td> 
-                                                    <div class="count">
-                                                        <button class="countBtn minusBtn"> <i class="icofont-minus"></i> </button>
-                                                        <input class="countNum" value="3"></input>
-                                                        <button class="countBtn plusBtn"> <i class="icofont-plus"></i> </button>
-                                                    </div> 
-                                                </td>
-                                                <td> 10.40 رس </td>
-                                                <td> 30.60 رس </td>
+                                                <td>  الاسم </td>
+                                                <td> حسام هلال  </td>
                                             </tr>
                                             <tr>
-                                                <td> <span class="removeProduct"> <img src="images/trash.png" alt="icon"> </span> </td>
-                                                <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
-                                                <td> <h3> توليب بنفسجي </h3> </td>
-                                                <td> 
-                                                    <div class="count">
-                                                        <button class="countBtn minusBtn"> <i class="icofont-minus"></i> </button>
-                                                        <input class="countNum" value="1"></input>
-                                                        <button class="countBtn plusBtn"> <i class="icofont-plus"></i> </button>
-                                                    </div> 
-                                                </td>
-                                                <td> 10.40 رس </td>
-                                                <td> 10.40 رس </td>
+                                                <td> رقم الجوال </td>
+                                                <td> 00966549782553 </td>
                                             </tr>
                                             <tr>
-                                                <td> <span class="removeProduct"> <img src="images/trash.png" alt="icon"> </span> </td>
-                                                <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
-                                                <td> <h3> توليب بنفسجي </h3> </td>
-                                                <td> 
-                                                    <div class="count">
-                                                        <button class="countBtn minusBtn"> <i class="icofont-minus"></i> </button>
-                                                        <input class="countNum" value="2"></input>
-                                                        <button class="countBtn plusBtn"> <i class="icofont-plus"></i> </button>
-                                                    </div> 
-                                                </td>
-                                                <td> 10.40 رس </td>
-                                                <td> 20.80 رس </td>
+                                                <td> اسم مستلم الطلب </td>
+                                                <td> حسام هلال  </td>
                                             </tr>
                                             <tr>
-                                                <td> <span class="removeProduct"> <img src="images/trash.png" alt="icon"> </span> </td>
-                                                <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
-                                                <td> <h3> توليب بنفسجي </h3> </td>
-                                                <td> 
-                                                    <div class="count">
-                                                        <button class="countBtn minusBtn"> <i class="icofont-minus"></i> </button>
-                                                        <input class="countNum" value="4"></input>
-                                                        <button class="countBtn plusBtn"> <i class="icofont-plus"></i> </button>
-                                                    </div> 
-                                                </td>
-                                                <td> 10.40 رس </td>
-                                                <td> 40.90 رس </td>
+                                                <td> جوال مستلم الطلب </td>
+                                                <td> حسام هلال  </td>
+                                            </tr>
+                                            <tr>
+                                                <td> المدينة </td>
+                                                <td> الرياض </td>
+                                            </tr>
+                                            <tr>
+                                                <td> عنوان المستلم </td>
+                                                <td><img src="images/pin.png" alt="icon"> شارع الملك بن عبد العزيز , الرياض , السعودية </td>
+                                            </tr>                                        
+                                            <tr>
+                                                <td> وقت التسليم </td>
+                                                <td> 9:00 ص  </td>
+                                            </tr>
+                                            <tr>
+                                                <td>  تاريخ التسليم </td>
+                                                <td> 12/5/2021 </td>
+                                            </tr>
+                                            <tr>
+                                                <td> تفاصيل أخرى عن الهدية </td>
+                                                <td> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد النصوص الأخرى إضاف إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="subscriptionBox subscriptionFormBtn">
-                                    <a class="primaryBtn btnRadius greyBtn" href="index-user.html"> <span> متابعة التسوق </span> </a>
+                                </div> 
+                            </div>
+                            <div class="subscriptionBox userSubscriptionPayment">
+                                <h4> طريقة الدفع </h4>
+                                <div class="userSubscriptionPayMethod">
+                                    <img src="images/Mastercard.png" alt="payment" class="img-fluid">
+                                    <h6> الدفع عند طريق ماستر كارد </h6>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4 col-lg-3">
-                                <div class="subscriptionBox">
-                                    <h4> ملخص الطلبية </h4> 
-                                    <div class="summary cartSummary">
-                                        <div class="coupon">
-                                            <div class="couponBox">
-                                                <span> <img src="images/coupon.png" alt="icon"> </span>
-                                                <input type="text" placeholder="أدخل الكود">
-                                                <button type="button" class="couponBtn"> <label> تفعيل </label> <img src="images/box.gif" alt="icon"> <span> <i class="icofont-check-alt"></i> </span>  </button>
-                                            </div>
-                                            <div class="couponMessage"></div>
-                                        </div>
-                                        <div class="summaryItems">
-                                            <p> <label> المجموع </label>  <span> 100 رس </span> </p>
-                                            <p> <label> رسوم التوصيل  </label>  <span> 10 رس</span> </p>
-                                            <p> <label> الضريبة 15% </label>  <span> 15 رس </span> </p>
-                                            <p class="total"> <label> المجموع الكلى </label>  <span> 125 رس </span> </p>
-                                        </div> 
-                                        <div class="summaryFooter">
-                                            <a class="primaryBtn btnRadius" href="checkout.html"> <span> إتمام الشراء </span> </a>
-                                        </div>                                 
-                                    </div>
-                                </div>
+                            <div class="subscriptionBox subscriptionFormBtn">
+                                <button type="button" class="primaryBtn btnRadius redBtn"  data-toggle="modal" data-target="#deleteModal"> <span> إلغاء الطلب</span> </button>
+                            </div>
+                            <div class="subscriptionBox cartTable">
+                                <h4> المنتجات التي طلبتها </h4> 
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> الصورة </th>
+                                            <th scope="col"> اسم المنتج </th>
+                                            <th scope="col"> الكمية</th>
+                                            <th scope="col"> سعر الوحدة </th>
+                                            <th scope="col"> السعر الاجمالى </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
+                                            <td> <h3> توليب بنفسجي </h3> </td>
+                                            <td> 
+                                                <div class="count">
+                                                    <input class="countNum" value="3"></input>
+                                                </div> 
+                                            </td>
+                                            <td> 10.40 رس </td>
+                                            <td> 30.80 رس </td>
+                                        </tr>
+                                        <tr>
+                                            <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
+                                            <td> <h3> توليب بنفسجي </h3> </td>
+                                            <td> 
+                                                <div class="count">
+                                                    <input class="countNum" value="4"></input>
+                                                </div> 
+                                            </td>
+                                            <td> 10.40 رس </td>
+                                            <td> 40.40 رس </td>
+                                        </tr>
+                                        <tr>
+                                            <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
+                                            <td> <h3> توليب بنفسجي </h3> </td>
+                                            <td> 
+                                                <div class="count">
+                                                    <input class="countNum" value="2"></input>
+                                                </div> 
+                                            </td>
+                                            <td> 10.40 رس </td>
+                                            <td> 20.80 رس </td>
+                                        </tr>
+                                        <tr>
+                                            <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
+                                            <td> <h3> توليب بنفسجي </h3> </td>
+                                            <td> 
+                                                <div class="count">
+                                                    <input class="countNum" value="4"></input>
+                                                </div> 
+                                            </td>
+                                            <td> 10.40 رس </td>
+                                            <td> 40.40 رس </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-12 col-sm-4 col-lg-3">
+                            <div class="subscriptionBox">
+                                <h4> ملخص الطلبية </h4> 
+                                <div class="summary">
+                                    <div class="summaryItems">
+                                        <p> <label> المجموع </label>  <span> 100 رس </span> </p>
+                                        <p> <label> رسوم التوصيل  </label>  <span> 10 رس</span> </p>
+                                        <p> <label> الضريبة 15% </label>  <span> 15 رس </span> </p>
+                                        <p> <label> الخصم </label>  <span> 15 رس </span> </p>
+                                        <p class="total"> <label> المجموع الكلى </label>  <span> 110 رس </span> </p>
+                                    </div>                                  
+                                </div>
+                            </div>
+                            <div class="subscriptionBox subscriptionFormBtn">
+                                <button type="button" class="primaryBtn btnRadius orangeBtn"> <span> إصدار فاتورة </span> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade siteModal statusModal" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="stausHeader">
+                    <img src="images/failed.png" alt="img" class="img-fluid">
+                </div>
+                <div class="statusBody">
+                    <h2> هل انت متأكد من حذف الطلب ؟ </h2>
+                    <p> فى حالة تم حذف الطلب سيتم حذف كافة المنتجات الموجودة </p>
+                </div>
+                <div class="statusFooter">
+                    <button type="button" class="primaryBtn" data-dismiss="modal" data-toggle="modal" data-target="#statusModal"> <span> نعم , حذف</span> </button>
+                    <button type="button" class="primaryBtn greyBtn"  data-dismiss="modal"> <span> تراجع </span> </button>
                 </div>
             </div>
         </div>
@@ -252,12 +317,10 @@
                     <img src="images/success.png" alt="img" class="img-fluid">
                 </div>
                 <div class="statusBody">
-                    <h2> تهانينا ! تم إستلام طلبك بنجاح </h2>
-                    <p> تم استلام طلبك بنجاح ويمكنك متابعة الطلب الخاص بك من قائمة اشتراكاتى  </p>
+                    <h2> تم إلغاء الطلب بنجاح </h2>
                 </div>
                 <div class="statusFooter">
                     <a class="primaryBtn" href="index-user.html"> <span> الرجوع للرئيسية </span> </a>
-                    <a class="primaryBtn greyBtn" href="user-subscription.html"> <span> متابعة الطلب </span> </a>
                 </div>
             </div>
         </div>

@@ -231,7 +231,7 @@
 
 
     // Custom Select
-    window.addEventListener('load', (event) => {
+    window.addEventListener('DOMContentLoaded', (event) => {
         let Index = 0;
         $('select').each(function () {
             let This = $(this),
@@ -511,93 +511,116 @@
     });
 
     // Allow Pofile Editing 
-    $('.editField').click(function() {
+    $('.editField').on('click' , function() {
         $(this).parent('.field').find('input').removeAttr("readonly");  
     });
 
     // Wizzard 
-    let x = Array.from(document.querySelectorAll('.wizardTab')) ,
+    let wizard = document.querySelector('.wizard');
+    if(wizard){
+        let x = Array.from(document.querySelectorAll('.wizardTab')) ,
         prevBtn = document.getElementById('prevBtn') ,
         nextBtn = document.getElementById('nextBtn') ,
         form = document.getElementById('checkoutForm') ,
         currentTab = 0 ,
         last = x.length - 1 ;
 
-    prevBtn.addEventListener('click', () => { changeStep('prev'); });
-    nextBtn.addEventListener('click', () => { changeStep('next'); });
+        prevBtn.addEventListener('click', () => { changeStep('prev'); });
+        nextBtn.addEventListener('click', () => { changeStep('next'); });
 
-    // Show the Current Step
-    showTab(currentTab); 
+        // Show the Current Step
+        showTab(currentTab); 
 
-    function showTab(n) {     
-        x[n].style.display = 'block';
-        n == 0 || n == last ? prevBtn.style.display = "none" : prevBtn.style.display = "flex";
-        n == last ? nextBtn.style.display = "none" : nextBtn.style.display = "flex";
-        stepIndicator(n);
-    }
-
-    // Display the Active Step
-    function changeStep(btn) {
-        // Validate Form 
-        validateForm();
-
-        //  Exit the function if any field in the current wizardTab is invalid:
-        if (currentTab == 1 && !validateForm()) return false;
-
-        x[currentTab].style.display = 'none';
-        btn === 'next' ?  currentTab++ : currentTab--;
-
-        // Progress
-        $('.wizardProgress').remove();
-        $('.wizardSteps').append('<div class="wizardProgress"></div>');
-        $('.wizardProgress').css('width', ((100 * currentTab) /( x.length - 1))+'%');
-
-        // if you have reached the end of the form   ... the form gets submitted:
-        // if (currentTab == x.length ) {    
-        //     // Form Submit 
-        //     form.addEventListener('submit', (e) => {
-        //         e.preventDefault();
-        //         const inputs = [];
-        //         form.querySelectorAll('input').forEach((input) => {
-        //             const { name, value } = input;
-        //             inputs.push({ name, value });
-        //         });
-        //         form.reset();
-        //     });
-        //     return false;
-        // }
-
-        // Otherwise, display the correct wizardTab:
-        showTab(currentTab);
-    }
-
-    function validateForm() {
-        let  x, y, i, valid = true;
-        x = document.getElementsByClassName('wizardTab');
-        y = x[currentTab].getElementsByClassName('fieldInput');
-
-        // A loop to checks every input field in the current wizardTab:
-        // for (i = 0; i < y.length; i++) {
-        //     if (y[i].value == "") {
-        //         y[i].className += " invalid";
-        //         valid = false;
-        //     }
-        // }
-
-        return valid; 
-    }
-
-    // This function removes the "active" class of all wizardStep...
-    function stepIndicator(n) {
-        let i , 
-            x = document.getElementsByClassName('wizardStep');
-
-        for (i = 0; i < x.length; i++) {
-            x[i].className = x[i].className.replace(" active", "");
-            n > i ? x[i].classList.add('finished') : x[i].classList.remove('finished') ;
+        function showTab(n) {     
+            x[n].style.display = 'block';
+            n == 0 || n == last ? prevBtn.style.display = "none" : prevBtn.style.display = "flex";
+            n == last ? nextBtn.style.display = "none" : nextBtn.style.display = "flex";
+            stepIndicator(n);
         }
-        n == last ? x[n].classList.add('finished') : x[n].className += " active";
+
+        // Display the Active Step
+        function changeStep(btn) {
+            // Validate Form 
+            validateForm();
+
+            //  Exit the function if any field in the current wizardTab is invalid:
+            if (currentTab == 1 && !validateForm()) return false;
+
+            x[currentTab].style.display = 'none';
+            btn === 'next' ?  currentTab++ : currentTab--;
+
+            // Progress
+            $('.wizardProgress').remove();
+            $('.wizardSteps').append('<div class="wizardProgress"></div>');
+            $('.wizardProgress').css('width', ((100 * currentTab) /( x.length - 1))+'%');
+
+            // if you have reached the end of the form   ... the form gets submitted:
+            // if (currentTab == x.length ) {    
+            //     // Form Submit 
+            //     form.addEventListener('submit', (e) => {
+            //         e.preventDefault();
+            //         const inputs = [];
+            //         form.querySelectorAll('input').forEach((input) => {
+            //             const { name, value } = input;
+            //             inputs.push({ name, value });
+            //         });
+            //         form.reset();
+            //     });
+            //     return false;
+            // }
+
+            // Otherwise, display the correct wizardTab:
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+            let  x, y, i, valid = true;
+            x = document.getElementsByClassName('wizardTab');
+            y = x[currentTab].getElementsByClassName('fieldInput');
+    
+            // A loop to checks every input field in the current wizardTab:
+            // for (i = 0; i < y.length; i++) {
+            //     if (y[i].value == "") {
+            //         y[i].className += " invalid";
+            //         valid = false;
+            //     }
+            // }
+    
+            return valid; 
+        }
+    
+        // This function removes the "active" class of all wizardStep...
+        function stepIndicator(n) {
+            let i , 
+                x = document.getElementsByClassName('wizardStep');
+    
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+                n > i ? x[i].classList.add('finished') : x[i].classList.remove('finished') ;
+            }
+            n == last ? x[n].classList.add('finished') : x[n].className += " active";
+        }
     }
+    
+
+    // Profile Subscription Progress
+    let subscriptionStep = [...document.getElementsByClassName('subscriptionStep')].length ,
+        activeStep = [...document.getElementsByClassName('subscriptionStep active')].length ,
+        progressRange = `${(100 * activeStep) / subscriptionStep}%`;
+    $('.subsProgress').css('width', progressRange);
+   
+    // Show Map to choose Location 
+    $('.showMap').on('click' , function() {
+        $('.addressMap').toggle('slow');  
+    });
+
+    // Delete Address
+    $('.deleteAddress').on('click' , function() {
+        $(this).parents('.address').remove();
+    });
+
+
+    
 
 
 
