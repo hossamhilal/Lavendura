@@ -20,7 +20,7 @@
 
 <body class="authenticated">
 
-    <!-- Header  -->
+    <!-- Header -->
     <div class="header">
         <div class="headerTop">
             <div class="container">
@@ -121,52 +121,89 @@
         </div>         
     </div>
 
-    <!-- Notifications Page  -->
+    <!-- Special Request Active Page  -->
     <div class="page">
         <div class="pageHeader">
-            <h1> الاشعارات </h1>
+            <h1> تفاصيل الطلب </h1>
             <ul>
                 <li> <a href="index.html"> <img src="images/home.png"> الرئيسية </a> </li>
-                <li> الاشعارات </li> 
+                <li> <a href="gifts.html"> الهدايا </a> </li>
+                <li> تفاصيل الطلب  </li> 
             </ul>
         </div>
         <div class="pageContent secPaddingSm grey">
-            <div class="container">
-                <div class="notificationsPage">
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                           <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
+            <div class="subscriptionPage specialRequestPage giftRequestPage">
+                <div class="container">
+                    <div class="subscriptionProgress orderProgress">
+                        <div class="subscriptionProgressSteps">
+                            <div class="subscriptionStep active"> <span class="userSubStatus Done"></span> <label> تم إستلام الطلب </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> جارى التجهيز </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> في الطريق </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> تم التسليم </label> </div>
+                            <div class="subsProgress"></div>
+                        </div>
+                    </div>                   
+                    <div class="userSubscriptionHead">
+                        <h2> <label> رقم الطلب </label> <span> #879554825234556 </span></h2>
+                        <p>  <label>  تم الطلب في :</label> <span> 13/11/2021 </span> </p>
+                    </div>                       
+                    <div class="subscriptionBox checkoutOrder">
+                        <h4> برجاء اختيار عملية الدفع </h4> 
+                        <div class="payMethods">
+                            <div class="payMethod">
+                                <label class="radio">
+                                    <div class="payMethodPic"> <img src="images/Mastercard.png" alt="payment" class="img-fluid"> </div>
+                                    <div class="payMethodInfo">
+                                        <h6> ماستر كارد </h6>
+                                        <span> يمكن الدفع عن طريق ماستر كارد </span>
+                                    </div>
+                                    <input type="radio" name="payMethod" value="1">
+                                </label>
+                            </div>
+                            <div class="payMethod">
+                                <label class="radio">
+                                    <div class="payMethodPic"> <img src="images/Visa.png" alt="payment" class="img-fluid"> </div>
+                                    <div class="payMethodInfo">
+                                        <h6> فيزا </h6>
+                                        <span> يمكن الدفع عن طريق الفيزا </span>
+                                    </div>
+                                    <input type="radio" name="payMethod" value="2">
+                                </label>
+                            </div>
+                            <div class="payMethod">
+                                <label class="radio">
+                                    <div class="payMethodPic"> <img src="images/Mada.png" alt="payment" class="img-fluid"> </div>
+                                    <div class="payMethodInfo">
+                                        <h6> مدى </h6>
+                                        <span> يمكن الدفع عن طريق مدى  </span>
+                                    </div>
+                                    <input type="radio" name="payMethod" value="3">
+                                </label>
+                            </div>
+                            <div class="payMethod">
+                                <label class="radio">
+                                    <div class="payMethodPic"> <img src="images/apple-pay.png" alt="payment" class="img-fluid"> </div>
+                                    <div class="payMethodInfo">
+                                        <h6> آبل باى </h6>
+                                        <span> يمكن الدفع عن طريق آبل باى </span>
+                                    </div>
+                                    <input type="radio" name="payMethod" value="4">
+                                </label>
+                            </div>
+                            <div class="payMethod">
+                                <label class="radio">
+                                    <div class="payMethodPic"> <img src="images/stc.png" alt="payment" class="img-fluid"> </div>
+                                    <div class="payMethodInfo">
+                                        <h6> STC Pay </h6>
+                                        <span> يمكن الدفع عن طريق stc pay </span>
+                                    </div>
+                                    <input type="radio" name="payMethod" value="5">
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-delivered.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-delivered.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
+                    <div class="subscriptionBox subscriptionFormBtn">
+                        <a href="gift-request-processing.html" class="primaryBtn btnRadius"> <span> تأكيد عملية الدفع </span> </a>
                     </div>
                 </div>
             </div>

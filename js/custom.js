@@ -158,78 +158,6 @@
         $('#activeSlid img').attr('src', ActiveSrc);
     });
 
-
-    // Partners OWL 
-    // $('.owlPartners').owlCarousel({
-    // rtl: rtlVal ,
-    //     margin: 20,
-    //     autoplay: true,
-    //     loop: true,
-    //     nav: false,
-    //     dots: false,
-    //     center : false ,
-    //     autoplaySpeed : 5000,
-    //     autoplayTimeout : 5000,
-    //     smartSpeed: 5000 ,
-    //     navText: ["<i class='icofont-thin-right'></i>", "<i class='icofont-thin-left'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         600: {
-    //             items: 3
-    //         },
-    //         1000: {
-    //             items: 4
-    //         }
-    //     }
-    // });
-
-    // Clients OWL 
-    // $('.owlClients').owlCarousel({
-    //     margin: 20,
-    //     autoplay: true,
-    //     loop: true,
-    //     nav: true,
-    //     dots: false,
-    //     center : false ,
-    //     autoplaySpeed : 5000,
-    //     autoplayTimeout : 5000,
-    //     smartSpeed: 5000 ,
-    //     navText: ["<i class='icofont-thin-right'></i>", "<i class='icofont-thin-left'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         600: {
-    //             items: 3
-    //         },
-    //         1000: {
-    //             items: 4
-    //         }
-    //     }
-    // });
-
-
-    // // Upload File 
-    // $('.uploadFile').on('change', function(e) {
-    //     let fileName = e.target.value.split( '\\' ).pop();
-    //     console.log(fileName);
-    //     let files = $(this).parent('.uploadBox').prev('.uploadedFiles');
-    //     files.append(
-    //         '<div class="file">' +
-    //             '<h3 class="fileName">' + fileName  + '</h3>' +
-    //             '<span class="deleteFile"> <i class="icofont-ui-delete"></i> </span>' +
-    //         '</div>'
-    //     );               
-    // });
-
-    // // Delete File
-    // $(document).on('click','.deleteFile' , function(){
-    //     $(this).parent('.file').remove();
-    // });
-
-
     // Custom Select
     window.addEventListener('DOMContentLoaded', (event) => {
         let Index = 0;
@@ -247,7 +175,7 @@
             This.wrap('<div class="customSelect"></div>');
 
             // Create Selected Box
-            This.after('<div class="selected"></div>');
+            This.after('<div class="selected placeholder"></div>');
 
             // Selected Preview Box
             let selected = This.next('.selected');
@@ -297,6 +225,7 @@
                 // Item Click
                 item.click(function (e) {
                     e.stopPropagation();
+                    selected.removeClass('placeholder');
 
                     // Append Selected Elements
                     selected.text($(this).text()).removeClass('active');
@@ -602,7 +531,6 @@
         }
     }
     
-
     // Profile Subscription Progress
     let subscriptionStep = [...document.getElementsByClassName('subscriptionStep')].length ,
         activeStep = [...document.getElementsByClassName('subscriptionStep active')].length ,
@@ -617,6 +545,22 @@
     // Delete Address
     $('.deleteAddress').on('click' , function() {
         $(this).parents('.address').remove();
+    });
+
+    // Planet radio Button
+    $('.planetBox input').on('change', function (){
+        if($(this).is(":checked")) {
+            $('.planetBox').removeClass('checked');
+            $(this).parent().addClass('checked');
+        }
+        else $(this).parent().removeClass('checked');
+    });
+
+
+    // Package Form 
+    $('.packageForm').submit(function(e) {
+        e.preventDefault();
+        $('#statusModal').modal('show')
     });
 
 

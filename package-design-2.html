@@ -124,50 +124,75 @@
     <!-- Notifications Page  -->
     <div class="page">
         <div class="pageHeader">
-            <h1> الاشعارات </h1>
+            <h1> صمم باقتك </h1>
             <ul>
                 <li> <a href="index.html"> <img src="images/home.png"> الرئيسية </a> </li>
-                <li> الاشعارات </li> 
+                <li> صمم باقتك </li> 
             </ul>
         </div>
         <div class="pageContent secPaddingSm grey">
-            <div class="container">
-                <div class="notificationsPage">
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                           <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
+            <div class="designPackagePage">
+                <div class="container">
+                    <form action="" class="packageForm">
+                        <div class="profileWrapper profileForm">
+                            <div class="addressForm">
+                                <div class="addressFormHead">
+                                    <h3> ملخص الطلب </h3>
+                                </div>
+                                <div class="addressFormBody noPadding">
+                                    <div class="subscriptionBox cartTable packageTable">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"> </th>
+                                                    <th scope="col"> الصورة </th>
+                                                    <th scope="col"> اسم المنتج </th>
+                                                    <th scope="col"> الكمية</th>
+                                                    <th scope="col"> سعر الوحدة </th>
+                                                    <th scope="col"> السعر الاجمالى </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> <span class="removeProduct"> <img src="images/trash.png" alt="icon"> </span> </td>
+                                                    <td> <div class="productImg"> <img src="images/cartImg.png" alt="img" class="img-fluid"> </div> </td>
+                                                    <td> <h3> تصميم خاص </h3> </td>
+                                                    <td> 
+                                                        <div class="count">
+                                                            <button class="countBtn minusBtn"> <i class="icofont-minus"></i> </button>
+                                                            <input class="countNum" value="3"></input>
+                                                            <button class="countBtn plusBtn"> <i class="icofont-plus"></i> </button>
+                                                        </div> 
+                                                    </td>
+                                                    <td> 10.40 رس </td>
+                                                    <td> 30.60 رس </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="primaryBtn btnRadius" data-toggle="modal" data-target="#statusModal"> <span> إضافة للسلة  </span> </button>
                         </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-delivered.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-delivered.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Modal -->
+    <div class="modal fade siteModal statusModal" id="statusModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="stausHeader">
+                    <img src="images/success.png" alt="img" class="img-fluid">
+                </div>
+                <div class="statusBody">
+                    <h2> تمت الإضافة بنجاح </h2>
+                </div>
+                <div class="statusFooter">
+                    <a class="primaryBtn" href="cart.html"> <span> إتمام عملية الشراء </span> </a>
+                    <button class="primaryBtn greyBtn"  data-dismiss="modal"> <span> متابعة التسوق </span> </button>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@
 
 <body class="authenticated">
 
-    <!-- Header  -->
+    <!-- Header -->
     <div class="header">
         <div class="headerTop">
             <div class="container">
@@ -121,52 +121,68 @@
         </div>         
     </div>
 
-    <!-- Notifications Page  -->
+    <!-- Special Request Active Page  -->
     <div class="page">
         <div class="pageHeader">
-            <h1> الاشعارات </h1>
+            <h1> تفاصيل الطلب </h1>
             <ul>
                 <li> <a href="index.html"> <img src="images/home.png"> الرئيسية </a> </li>
-                <li> الاشعارات </li> 
+                <li> <a href="gifts.html"> الهدايا </a> </li>
+                <li> تفاصيل الطلب  </li> 
             </ul>
         </div>
         <div class="pageContent secPaddingSm grey">
-            <div class="container">
-                <div class="notificationsPage">
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                           <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
+            <div class="subscriptionPage specialRequestPage giftRequestPage">
+                <div class="container">
+                    <div class="subscriptionProgress orderProgress">
+                        <div class="subscriptionProgressSteps">
+                            <div class="subscriptionStep active"> <span class="userSubStatus Done"></span> <label> تم إستلام الطلب </label> </div>
+                            <div class="subscriptionStep active"> <span class="userSubStatus Done"></span> <label> جارى التجهيز </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> في الطريق </label> </div>
+                            <div class="subscriptionStep"> <span class="userSubStatus"></span> <label> تم التسليم </label> </div>
+                            <div class="subsProgress"></div>
                         </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-delivered.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-delivered.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
-                    </div>
-                    <div class="notification">
-                        <div class="icon"> <i class="icofont-alarm"></i> </div>
-                        <div class="body"> 
-                            <h3> وافق محمد خالد علي سعر طلب الخاص بتنسيق الهدايا رقم <a href="special-request-active.html"> #123555 </a> </h3>
-                           <h6> <i class="icofont-clock-time"></i> منذ 5 دقائق </h6>
-                        </div>
+                    </div>                   
+                    <div class="userSubscriptionHead">
+                        <h2> <label> رقم الطلب </label> <span> #879554825234556 </span></h2>
+                        <p>  <label>  تم الطلب في :</label> <span> 13/11/2021 </span> </p>
+                    </div>                       
+                    <div class="subscriptionBox subscriptionTable">
+                        <h4> تفاصيل الطلب </h4> 
+                        <div class="productTable">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>  اسم المنتج </td>
+                                        <td> ورد عيد الام  </td>
+                                    </tr>
+                                    <tr>
+                                        <td> وصف المنتج </td>
+                                        <td> هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد النصوص الأخرى إضاف إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة </td>
+                                    </tr>
+                                    <tr>
+                                        <td> اسم المورد </td>
+                                        <td> حسام هلال </td>
+                                    </tr>
+                                    <tr>
+                                        <td>  السعر المتوقع </td>
+                                        <td> 50رس </td>
+                                    </tr>
+                                    <tr>
+                                        <td>  نوع التغليف </td>
+                                        <td> 
+                                            <div class="packType">
+                                                <div class="pic"> <img src="images/giftBox.png" alt="Gift Box"> </div>
+                                                <div class="data">
+                                                    <h5> اسم التغليف  </h5>
+                                                    <p> 20.90رس </p>
+                                                </div>
+                                            </div> 
+                                        </td>
+                                    </tr>                                      
+                                </tbody>
+                            </table>
+                        </div> 
                     </div>
                 </div>
             </div>

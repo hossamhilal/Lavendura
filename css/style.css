@@ -25,7 +25,7 @@
     --greyLight: #F8F8F8;
     --greyDark: #E9E9E9;
     --greyBg: #EFEFEF;
-    --greyBgLight : #7C7C7C;
+    --greyBgLight: #7C7C7C;
     --dark: #464646;
     --border: 1px solid #F0F0F0;
     --border2: 1px solid var(--greyDark);
@@ -128,10 +128,12 @@ body {
 
 .secPadding {
     padding: 60px 0;
+    overflow: hidden;
 }
 
 .secPaddingSm {
     padding: 40px 0;
+    overflow: hidden;
 }
 
 .grey {
@@ -316,18 +318,28 @@ button:focus {
     padding-inline-end: 30px;
 }
 
+.field .selected.placeholder,
+.selected.placeholder {
+    font-size: 12px;
+    color: var(--textLight);
+}
+
 .selected::before {
     content: '';
     border: solid var(--text);
     border-width: 0 2px 2px 0;
-    padding: 5px;
+    padding: 3px;
     display: inline-block;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     position: absolute;
     left: 18px;
-    top: 15px;
+    top: 17px;
     transition: all .3s ease-in-out;
+}
+
+.selected.placeholder::before {
+    border-color: var(--textLight)
 }
 
 .selected.active::before {
@@ -336,16 +348,19 @@ button:focus {
 
 .selectList {
     background: var(--white);
+    border: var(--border);
     position: absolute;
     top: 100%;
     margin-top: 3px;
     width: 100%;
     display: none;
-    z-index: 2;
+    z-index: 4;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .customSelect li {
     padding: 5px 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     min-height: 40px;
@@ -359,13 +374,13 @@ button:focus {
 }
 
 .customSelect li.optionSelected {
-    border-inline-start-color: var(--orange);
-    background: #ffe5bd;
+    border-inline-start-color: var(--primaryColor);
+    background: rgb(127 70 100 / 8%);
     color: var(--primaryColor);
 }
 
 .customSelect li:hover {
-    background: #ffe5bd;
+    background: rgb(127 70 100 / 8%);
     color: var(--primaryColor);
     cursor: pointer;
 }
@@ -379,8 +394,10 @@ button:focus {
         font-size: 13px;
     }
 
+    .field .selected,
     .selected {
         min-height: 40px;
+        font-size: 12px;
     }
 
     .selected::before {
@@ -776,6 +793,7 @@ button:focus {
     .header .selected {
         padding: 0 5px 0 9px;
         margin-top: 0;
+        font-size: 11px;
     }
 
     .dropIcon {
@@ -786,6 +804,7 @@ button:focus {
     .header .selected::before {
         padding: 2px;
         top: 7px;
+        left: -3px;
     }
 
     .user {
@@ -794,6 +813,10 @@ button:focus {
 
     .favourite img {
         margin: 3px 0 0 0;
+    }
+
+    .headerMiddle {
+        padding-bottom: 0;
     }
 
     .headerMiddle .flexBox {
@@ -816,6 +839,30 @@ button:focus {
 
     .mobileIcons .cartIcon {
         margin: 0 15px;
+    }
+
+    .mobileIcons img {
+        max-width: 22px;
+    }
+
+    .mobileIcons .notificationAlert {
+        width: 27px;
+        height: 27px;
+    }
+
+    .mobileIcons .notificationAlert img {
+        max-width: 13px;
+    }
+
+    .notificationAlert span {
+        top: -4px;
+        right: -6px;
+    }
+
+    .cartIcon span {
+        top: -4px;
+        right: -5px;
+        font-size: 9px;
     }
 
     .menuBtn {
@@ -1304,6 +1351,76 @@ button:focus {
     left: -20px;
 }
 
+.planetType {
+    margin-bottom: 20px;
+}
+
+.planetType h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.planetType span {
+    color: var(--text);
+    font-weight: 200;
+}
+
+.planetTypes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.planetBox {
+    width: 79px;
+    height: 79px;
+    border-radius: 10px;
+    margin-inline-end: 10px;
+    position: relative;
+    border: 2px solid var(--white);
+    overflow: hidden;
+}
+
+.planetBox.checked {
+    border-color: var(--primaryColor)
+}
+
+.planetBox img {
+    width: 100%;
+    height: 100%;
+}
+
+.planetBox input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.planetBox {
+    border: 1px solid var(--white);
+}
+
+.prodList {
+    margin-bottom: 10px;
+}
+
+.prodList li {
+    font-size: 14px;
+}
+
+.prodList label {
+    color: var(--text);
+    margin-inline-end: 5px;
+}
+
+.prodList span {
+    font-weight: 400;
+}
+
 @media screen and (max-width:425px) {
     .products .item {
         padding: 0 10px;
@@ -1358,6 +1475,24 @@ button:focus {
         width: 30px;
         height: 30px;
         top: calc(50% - 15px);
+    }
+
+    .planetBox {
+        width: 45px;
+        height: 45px;
+        margin-inline-end: 2px;
+    }
+
+    .planetType h3 {
+        font-size: 14px;
+    }
+
+    .prodList li {
+        font-size: 13px;
+    }
+
+    .prodList span {
+        font-size: 12px;
     }
 }
 
@@ -1975,7 +2110,8 @@ button:focus {
     max-width: 300px;
 }
 
-.statusModal p span {
+.statusModal p span,
+.statusModal p a {
     color: var(--orange);
     font-size: 18px;
     font-weight: 500;
@@ -2166,7 +2302,6 @@ button:focus {
 
 .field .fieldInput::placeholder {
     font-size: 12px;
-    color: var(--textLight);
     color: var(--textLight);
 }
 
@@ -2460,6 +2595,10 @@ button:focus {
 
     .phoneField .code img {
         max-width: 19px;
+    }
+
+    .field .selected {
+        font-size: 12px;
     }
 }
 
@@ -3737,7 +3876,6 @@ hr {
         margin-bottom: 5px;
     }
 
-    .subscriptionTable td,
     .table td,
     .table th {
         padding: 10px;
@@ -4501,6 +4639,11 @@ hr {
 
     .subscriptionDetailsPage .lineProduct h3 {
         margin: 0;
+    }
+
+    .subscriptionTable td {
+        padding: 10px;
+        font-size: 12px;
     }
 }
 
@@ -5783,7 +5926,7 @@ hr {
     border-bottom: var(--border);
 }
 
-.addressForm h3 {
+.addressForm .addressFormHead h3 {
     font-size: 18px;
     margin: 0;
 }
@@ -5937,8 +6080,12 @@ hr {
         font-size: 14px;
     }
 
-    .addressForm h3 {
+    .addressForm .addressFormHead h3 {
         font-size: 13px;
+    }
+
+    .profileForm .primaryBtn {
+        width: 220px;
     }
 }
 
@@ -6191,7 +6338,7 @@ hr {
     color: var(--primaryColor);
 }
 
-@media screen and (max-width:424px) { 
+@media screen and (max-width:424px) {
     .deisnersFilter {
         flex-direction: column;
     }
@@ -6218,7 +6365,7 @@ hr {
 
     .designer h3 {
         font-size: 14px;
-    }    
+    }
 }
 
 
@@ -6303,20 +6450,20 @@ hr {
         font-size: 18px;
         margin-bottom: 7px;
     }
-    
+
     .aboutArticle p {
         font-size: 12px;
     }
-    
+
     .aboutContent {
         max-width: 100%;
     }
-    
+
     .aboutArticle .aboutItem p {
         font-size: 11px;
         line-height: 20px;
     }
-    
+
     .aboutVector::after {
         width: 230px;
         height: 230px;
@@ -6325,17 +6472,336 @@ hr {
 
 
 /*==========================||---------------------------||========================*/
-/*==========================||          Volunteer        ||========================*/
+/*==========================||        Policy Page        ||========================*/
 /*==========================||---------------------------||========================*/
 
-@media screen and (max-width:768px) {}
+.policyPage {
+    color: #585858;
+    font-size: 15px;
+}
+
+.policyPage .addressFormBody {
+    padding: 15px 25px;
+}
+
+.policyPage p {
+    color: inherit;
+    font-size: inherit;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.policyPage h4 {
+    font-size: 18px;
+    color: var(--primaryColor);
+    margin-top: 30px;
+}
+
+.policyPage ul {
+    margin-bottom: 20px;
+}
+
+.policyPage li {
+    color: inherit;
+    font-size: inherit;
+    line-height: 27px;
+}
+
+.policyPage h5 {
+    font-size: inherit;
+    color: var(--primaryColor);
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .policyPage {
+        font-size: 13px;
+    }
+
+    .policyPage .addressFormBody {
+        padding: 10px 15px;
+    }
+
+    .policyPage p {
+        margin-bottom: 10px;
+    }
+
+    .policyPage h4 {
+        font-size: 16px;
+    }
+
+    .policyPage h5 {
+        margin-bottom: 2px;
+    }
+}
 
 
 /*==========================||---------------------------||========================*/
-/*==========================||          Volunteer        ||========================*/
+/*==========================||       Design Package      ||========================*/
 /*==========================||---------------------------||========================*/
 
-@media screen and (max-width:768px) {}
+.designPackagePage .field {
+    margin-bottom: 15px;
+}
+
+.packageList {
+    margin-bottom: 40px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.packageItem .flex:first-of-type {
+    margin-inline-end: 20px;
+}
+
+.packageItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.packageList h3 {
+    font-size: 14px;
+}
+
+.packageItem .count {
+    width: 100px;
+    border-radius: 25px;
+    font-size: 12px;
+    height: 40px;
+    margin-inline-end: 30px;
+}
+
+.packageItem .count input {
+    font-size: 14px;
+}
+
+.packageItem .field {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.packageItem .field label {
+    margin-bottom: 0;
+    margin-inline-end: 10px;
+    min-width: 35px;
+}
+
+.packageItem .customSelect {
+    min-width: 130px;
+    font-size: 13px;
+}
+
+.packageItem .selected {
+    font-size: 12px;
+    min-height: 40px;
+}
+
+.packageItem .selected::before {
+    left: 18px;
+    top: 15px;
+    padding: 2px;
+}
+
+.packageItem h5 {
+    font-size: 14px;
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.packageItem .removeProduct {
+    margin: 0;
+    margin-inline-start: 20px;
+}
+
+.packageItem h5 {
+    margin: 0;
+    text-align: center;
+}
+
+.noPadding {
+    padding: 0;
+}
+
+.packageTable th:first-of-type {
+    border-end-start-radius: 5px;
+    border-start-start-radius: 5px;
+}
+
+.packageTable th:last-of-type {
+    border-end-end-radius: 5px;
+    border-start-end-radius: 5px;
+}
+
+.specialRequestPage .subscriptionBox {
+    max-width: 100%;
+}
+
+.giftRequestPage .table {
+    margin: 0;
+}
+
+.packType {
+    display: flex;
+    align-items: center;
+}
+
+.packType .pic {
+    width: 100px;
+}
+
+.packType img {
+    max-width: 100%;
+}
+
+.packType h5 {
+    font-size: 14px;
+}
+
+.packType p {
+    color: var(--primaryColor);
+    font-size: 12px;
+}
+
+.giftRequestPage .subscriptionFormBtn {
+    display: flex;
+}
+
+.giftRequestPage .redBtn {
+    margin-inline-start: 20px;
+}
+
+
+@media (min-width:768px) {
+    .packageItem .count {
+        margin-inline-end: 15px;
+    }
+
+    .packageItem .field {
+        margin-inline-end: 15px;
+    }
+}
+
+@media (min-width:992px) {
+    .packgeFlowers .packageItem .flex:first-of-type {
+        width: calc(50% - 60px);
+    }
+
+    .packageCoordination .packageItem .flex:first-of-type {
+        width: calc(60% - 60px);
+    }
+
+    .packageItem .count {
+        width: 140px;
+    }
+
+    .packageItem .customSelect {
+        min-width: 180px;
+    }
+
+    .packageItem h5 {
+        width: 120px;
+    }
+
+    .packageItem h3 {
+        width: calc(50% - 70px);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .packageItem .productImg {
+        order: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .packageList h3 {
+        font-size: 12px;
+    }
+
+    .packageItem .count {
+        width: 70px;
+        height: 35px;
+    }
+
+    .packageItem .selected {
+        min-height: 35px;
+    }
+
+    .packageItem .customSelect {
+        min-width: 100px;
+    }
+
+    .packageItem h5 {
+        font-size: 12px;
+    }
+
+    .giftRequestPage .table td:first-of-type {
+        width: 92px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .packageItem {
+        flex-direction: column;
+        align-items: flex-start;
+        border: var(--border);
+        padding: 5px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .packageItem .flex:last-of-type {
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 5px;
+        flex-wrap: wrap;
+    }
+
+    .packageItem .count {
+        margin-inline-end: 5px;
+    }
+
+    .packageItem .field label {
+        min-width: 30px;
+        display: none;
+    }
+
+    .packageItem .removeProduct,
+    .packageItem h5 {
+        margin-top: 5px;
+    }
+
+    .packType .pic {
+        width: 60px;
+    }
+    
+    .packType h5 {
+        font-size: 12px;
+    }
+
+    .giftRequestPage .redBtn {
+        margin-inline-start: 10px;
+    }
+    
+    .giftRequestPage .subscriptionFormBtn .primaryBtn {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width:424px) {
+    .packageItem .removeProduct {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+}
 
 
 /*==========================||---------------------------||========================*/
