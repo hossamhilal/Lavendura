@@ -5,8 +5,7 @@
     // Pre Loading 
     window.onpaint = preloadFunc();
     function preloadFunc() {
-        // $('body').addClass('stopScroll');
-        $('.loader').remove();
+        $('body').addClass('stopScroll');
     }
     
     // Loader 
@@ -17,7 +16,7 @@
                 $(this).remove();
                 $('#cityModal').modal('show');
             }); 
-        }, 12000);   
+        }, 10000);   
     });
 
     // OPEN SIDE  MENU 
