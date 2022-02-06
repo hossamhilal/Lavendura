@@ -1177,14 +1177,36 @@ button:focus {
 }
 
 .secHeader h2::before {
+    display: inline-flex;
     content: url('../images/flower-right.png');
     margin-inline-end: 10px;
+    transform: rotate(45deg);
+    transition: all 1s ease-in-out;
 }
 
 .secHeader h2::after {
+    display: inline-flex;
     content: url('../images/flower-left.png');
     margin-inline-start: 10px;
+    transform: rotate(-45deg);
+    transition: all 1s ease-in-out;
 }
+
+.secHeader .animated::before ,
+.secHeader .animated::after{
+    transform: rotate(0deg);
+}
+
+@keyframes fly {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
 
 .secHeader p {
     font-size: 14px;

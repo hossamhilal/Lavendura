@@ -554,6 +554,11 @@
     });
 
 
+    // Title Animation
+    setInterval(function() {
+        $('.secHeader h2 ').toggleClass('animated')
+    }, 1000);
+
 
     // iniat WOW Js
     new WOW().init();
