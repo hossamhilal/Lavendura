@@ -3,13 +3,14 @@
     "use strict";
 
     $(window).on('load', function () {
-        // $('body').addClass('stopScroll');
-        $('#cityModal').modal('show');
-        // $('.loader').fadeOut(500, function () {
-        //     $(this).remove();
-        //     // $('body').removeClass('stopScroll');
-
-        // }); 
+        $('body').addClass('stopScroll');
+        setTimeout(function () {
+            $('.loader').fadeOut(2000, function () {
+                $('body').removeClass('stopScroll');
+                $(this).remove();
+                $('#cityModal').modal('show');
+            }); 
+        }, 12000);   
     });
 
     // OPEN SIDE  MENU 
@@ -18,7 +19,7 @@
         $('.bodyOverlay').addClass('show');
         setTimeout(function () {
             $('body').addClass('stopScroll');
-        }, 200);
+        }, 100);
     });
 
     // CLOSE SIDE MENU 
@@ -27,24 +28,6 @@
         $('.headerBottom').removeClass('show');
         $('body').removeClass('stopScroll');
     });
-
-    // //  Open DropDown
-    // $('.dropToggle').on('click', function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     if($(this).next('.dropDown').hasClass('open')){
-    //         $('.dropDown').removeClass('open');
-    //     } else {
-    //         $('.dropDown').removeClass('open');
-    //         $(this).next('.dropDown').toggleClass('open');
-    //     } 
-    // });
-
-    //  Close DropDown
-    // $(document).on('click', function(){
-    //     $('.dropDown').removeClass('open');
-    // });
-
 
     // Check if Rtl 
     var rtlVal = true;
@@ -562,20 +545,6 @@
         e.preventDefault();
         $('#statusModal').modal('show')
     });
-
-
-    
-
-
-
-   
-
-    
-
-    
-    
-
-    
 
 
 
