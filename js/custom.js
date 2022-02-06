@@ -2,10 +2,16 @@
 (function ($) {
     "use strict";
 
-    $(window).on('load', function () {
+    // Pre Loading 
+    window.onpaint = preloadFunc();
+    function preloadFunc() {
         $('body').addClass('stopScroll');
+    }
+    
+    // Loader 
+    $(window).on('load', function () { 
         setTimeout(function () {
-            $('.loader').fadeOut(2000, function () {
+            $('.loader').fadeOut(5000, function () {
                 $('body').removeClass('stopScroll');
                 $(this).remove();
                 $('#cityModal').modal('show');
