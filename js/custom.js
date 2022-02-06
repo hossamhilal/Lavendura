@@ -5,7 +5,8 @@
     // Pre Loading 
     window.onpaint = preloadFunc();
     function preloadFunc() {
-        $('body').addClass('stopScroll');
+        // $('body').addClass('stopScroll');
+        $('.loader').remove();
     }
     
     // Loader 
@@ -243,9 +244,6 @@
     const inputElements = [...document.querySelectorAll('input.codeInput')]
     inputElements.forEach((ele, index) => {
         ele.addEventListener('keydown', (e) => {
-            // if the keycode is backspace & the current field is empty
-            // focus the input before the current. The event then happens
-            // which will clear the input before the current
             if (e.keyCode === 8 && e.target.value === '') inputElements[Math.max(0, index - 1)].focus()
         })
         ele.addEventListener('input', (e) => {
@@ -533,7 +531,7 @@
 
     // Delete Address
     $('.deleteAddress').on('click' , function() {
-        $(this).parents('.address').remove();
+        $(this).parents('.address').parent().remove();
     });
 
     // Planet radio Button
@@ -545,11 +543,15 @@
         else $(this).parent().removeClass('checked');
     });
 
-
     // Package Form 
     $('.packageForm').submit(function(e) {
         e.preventDefault();
         $('#statusModal').modal('show')
+    });
+
+    // Remove Package Item 
+    $('.removeProduct').on('click' , function(){
+        $(this).parents('.packageItem').remove();
     });
 
 
