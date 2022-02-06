@@ -3444,6 +3444,7 @@ button:focus {
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 .activeSlide a {
