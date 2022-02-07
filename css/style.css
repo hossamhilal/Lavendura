@@ -4236,6 +4236,10 @@ hr {
     overflow: hidden;
 }
 
+.fullWidth {
+    max-width: 100%;
+}
+
 .boxPadding {
     padding: 15px 25px;
 }

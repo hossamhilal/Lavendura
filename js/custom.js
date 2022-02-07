@@ -11,12 +11,12 @@
     // Loader 
     $(window).on('load', function () { 
         setTimeout(function () {
-            $('.loader').fadeOut(5000, function () {
+            $('.loader').fadeOut(3000, function () {
                 $('body').removeClass('stopScroll');
                 $(this).remove();
                 $('#cityModal').modal('show');
             }); 
-        }, 10000);   
+        },5000);   
     });
 
     // OPEN SIDE  MENU 
